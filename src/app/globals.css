@@ -2,32 +2,181 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  @font-face {
+    font-family: "Satoshi";
+    font-weight: 900;
+    font-display: swap;
+    src: url("/fonts/Satoshi/Satoshi-Bold.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Satoshi";
+    font-weight: 700;
+    font-display: swap;
+    src: url("/fonts/Satoshi/Satoshi-Bold.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Satoshi";
+    font-weight: 500;
+    font-display: swap;
+    src: url("/fonts/Satoshi/Satoshi-Medium.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Satoshi";
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/Satoshi/Satoshi-Regular.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Satoshi";
+    font-weight: 300;
+    font-display: swap;
+    src: url("/fonts/Satoshi/Satoshi-Light.ttf") format("truetype");
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.layout {
+  @apply mx-auto;
+  max-width: 1440px;
+  padding: 0 16px;
+  overflow: visible;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.gradients-4-br {
+  background-image: linear-gradient(
+    135deg,
+    hsl(284deg 100% 63%) 0%,
+    hsl(300deg 77% 58%) 8%,
+    hsl(313deg 89% 61%) 16%,
+    hsl(323deg 96% 65%) 24%,
+    hsl(332deg 98% 68%) 31%,
+    hsl(341deg 100% 70%) 39%,
+    hsl(353deg 100% 72%) 46%,
+    hsl(7deg 100% 71%) 54%,
+    hsl(18deg 100% 68%) 61%,
+    hsl(25deg 97% 66%) 69%,
+    hsl(27deg 98% 67%) 77%,
+    hsl(28deg 98% 69%) 84%,
+    hsl(30deg 99% 71%) 92%,
+    hsl(32deg 100% 72%) 100%
+  );
+}
+
+.gradients-3-br {
+  background-image: linear-gradient(
+    135deg,
+    hsl(334deg 97% 69%) 0%,
+    hsl(342deg 100% 70%) 9%,
+    hsl(350deg 100% 72%) 17%,
+    hsl(0deg 100% 73%) 26%,
+    hsl(10deg 100% 70%) 34%,
+    hsl(17deg 100% 68%) 42%,
+    hsl(24deg 97% 65%) 50%,
+    hsl(26deg 97% 66%) 58%,
+    hsl(27deg 98% 67%) 67%,
+    hsl(28deg 98% 69%) 75%,
+    hsl(29deg 99% 70%) 83%,
+    hsl(31deg 99% 71%) 91%,
+    hsl(32deg 100% 72%) 100%
+  );
+}
+
+.text-clamp-2xl {
+  font-size: clamp(1.2rem, 0.462rem + 1.154vw, 1.5rem);
+}
+
+.text-clamp-xl {
+  font-size: clamp(1rem, 0.385rem + 0.962vw, 1.25rem);
+}
+
+.text-clamp-lg {
+  font-size: clamp(0.875rem, 0.26rem + 0.962vw, 1.125rem);
+}
+
+.text-clamp-bs {
+  font-size: clamp(0.8rem, 0.308rem + 0.769vw, 1rem);
+}
+
+.text-clamp-sm {
+  font-size: clamp(0.7rem, 0.269rem + 0.673vw, 0.875rem);
+}
+
+.text-clamp-140 {
+  font-size: clamp(7rem, 2.692rem + 6.731vw, 8.75rem);
+}
+
+.text-clamp-82 {
+  font-size: clamp(4.1rem, 1.577rem + 3.942vw, 5.125rem);
+}
+
+.text-clamp-80 {
+  font-size: clamp(4rem, 1.538rem + 3.846vw, 5rem);
+}
+
+.text-clamp-56 {
+  font-size: clamp(2.8rem, 1.077rem + 2.692vw, 3.5rem);
+}
+
+.text-clamp-28 {
+  font-size: clamp(1.4rem, 0.538rem + 1.346vw, 1.75rem);
+}
+
+.text-clamp-22 {
+  font-size: clamp(1.1rem, 0.423rem + 1.058vw, 1.375rem);
+}
+
+.text-clamp-18 {
+  font-size: clamp(0.9rem, 0.346rem + 0.865vw, 1.125rem);
+}
+
+.p-clamp-4 {
+  padding: clamp(0.8rem, 0.308rem + 0.769vw, 1rem);
+}
+
+.p-clamp-120px {
+  padding: clamp(6rem, 2.308rem + 5.769vw, 7.5rem);
+}
+
+.py-clamp-5 {
+  padding-top: clamp(1rem, 0.385rem + 0.962vw, 1.25rem);
+  padding-bottom: clamp(1rem, 0.385rem + 0.962vw, 1.25rem);
+}
+
+.py-clamp-20 {
+  padding-top: clamp(4rem, 1.538rem + 3.846vw, 5rem);
+  padding-bottom: clamp(4rem, 1.538rem + 3.846vw, 5rem);
+}
+
+.px-clamp-10 {
+  padding-left: clamp(2rem, 0.769rem + 1.923vw, 2.5rem);
+  padding-right: clamp(2rem, 0.769rem + 1.923vw, 2.5rem);
+}
+
+.px-clamp-120px {
+  padding-left: clamp(6rem, 2.308rem + 5.769vw, 7.5rem);
+  padding-right: clamp(6rem, 2.308rem + 5.769vw, 7.5rem);
+}
+
+.pt-clamp-6 {
+  padding-top: clamp(1.2rem, 0.462rem + 1.154vw, 1.5rem);
+}
+
+.gap-clamp-8 {
+  gap: clamp(1.6rem, 0.615rem + 1.538vw, 2rem);
+}
+
+.gap-clamp-6 {
+  gap: clamp(1.2rem, 0.462rem + 1.154vw, 1.5rem);
+}
+
+.gap-clamp-5 {
+  gap: clamp(1rem, 0.385rem + 0.962vw, 1.25rem);
+}
+
+.mb-clamp-16 {
+  margin-bottom: clamp(3.2rem, 1.231rem + 3.077vw, 4rem);
+}
+
+.mb-clamp-8 {
+  margin-bottom: clamp(1.6rem, 0.615rem + 1.538vw, 2rem);
 }
