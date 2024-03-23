@@ -28,7 +28,7 @@ export default function Home() {
   if (pageMobile) {
     return (
       <section className="w-full h-screen flex justify-center items-center text-white">
-        page isn't available in screen width under 1024px
+        page isn&apos;t available in screen width under 1024px
       </section>
     );
   } else {
